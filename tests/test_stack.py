@@ -14,3 +14,12 @@ def test_push():
     stack = Stack()
     stack.push('data_1')
     assert stack.top.data == 'data_1'
+
+
+def test_pop():
+    stack = Stack()
+    stack.push('data_1')
+    data = stack.pop()
+    assert data == 'data_1'
+    assert stack.content == []
+    assert stack.top is None
