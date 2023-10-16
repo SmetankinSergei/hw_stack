@@ -9,6 +9,9 @@ class Stack:
         self.content = []
         self.top = None
 
+    def __str__(self):
+        return f'{__class__.__name__}(elements_amount={len(self.content)}, top_element={self.top})'
+
     def get_last_node(self):
         """Получаем последний элемент из стека"""
         return None if not self.content else self.content[-1]
