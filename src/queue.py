@@ -19,8 +19,15 @@ class Queue:
         self.tail = new_node
         self.head = self.content[0]
 
+    def dequeue(self):
+        if self.content:
+            return self.content.pop(0).data
+
 
 class Node:
     def __init__(self, data, next_node):
         self.data = data
         self.next_node = next_node
+
+    def __repr__(self):
+        return f'{__class__.__name__}({self.data})'
