@@ -18,6 +18,7 @@ def test_insert_at_end():
 def test_insert_first_node():
     ll = LinkedList()
     ll.insert_at_end({'id': 3})
+    assert str(ll.head) == "Node({'id': 3})"
     assert str(ll.tail) == "Node({'id': 3})"
 
 
