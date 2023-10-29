@@ -44,6 +44,27 @@ class LinkedList:
         self.__head = node
         self.__tail = node
 
+    def to_list(self):
+        """Возвращает список данных всех Node"""
+        return [node.data for node in self.__content]
+
+    def get_data_by_id(self, item_id):
+        """Возвращает словарь по id, если данные - это словарь, и в нём есть такой id"""
+        for item in self.to_list():
+            # if not isinstance(item, dict) or 'id' not in item.keys():
+            #     raise TypeError("Данные не являются словарем или в словаре нет id")
+            """В задании сказано, что обработку сделать нужно тут, но мне кажется, что тот вариант, который я 
+            закомментировал, был бы лучше. Потому как мы предоставляем обработку ошибки вызывающему коду! а не делаем 
+            это за него так, как хотим. Может в вызывающем коде нужно что-то другое в этом случае. То есть 
+            гибкость страдает, переиспользование под вопросом"""
+            try:
+                if item['id'] == item_id:
+                    return item
+            except:
+                raise TypeError("Данные не являются словарем или в словаре нет id")
+
+
+
 
 class Node:
     def __init__(self, data, next_node):
